@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,79 +8,76 @@
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
     body {
       font-family: 'Montserrat', Arial, sans-serif;
-      background: #fff8f0;
-      color: #333;
       margin: 0;
       padding: 0;
-      background-image: url('https://images.unsplash.com/photo-1506801310323-534be5e7b4a6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-      background-repeat: no-repeat;
-      background-position: center top;
+      background: url('https://images.unsplash.com/photo-1509032730925-d582de39e253?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .header-img {
-      width: 100%;
-      max-height: 250px;
-      object-fit: cover;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
-      box-shadow: 0 4px 12px rgba(255, 165, 0, 0.3);
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-shadow: 1px 1px 4px #000;
     }
     .container {
-      max-width: 600px;
-      margin: 20px auto;
+      background-color: rgba(255, 152, 0, 0.85);
       padding: 30px 25px;
-      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255, 165, 0, 0.4);
+      max-width: 600px;
+      width: 90%;
+      box-shadow: 0 0 25px rgba(255, 87, 34, 0.8);
     }
     h1 {
       text-align: center;
-      color: #f97316;
+      color: #fff;
       margin-bottom: 25px;
       font-weight: 700;
       font-size: 1.9rem;
-      text-shadow: 1px 1px 3px #d26900;
+      text-shadow: 1px 1px 5px #b03e00;
     }
     label {
       display: block;
       margin-top: 15px;
       font-weight: 600;
-      color: #e67e22;
       font-size: 1rem;
+      color: #fff3e0;
+      text-shadow: 1px 1px 3px #d35400;
     }
-    input[type="text"], input[type="tel"], input[type="email"], select, textarea {
+    input[type="text"], input[type="tel"], select {
       width: 100%;
       padding: 10px 12px;
       margin-top: 7px;
       border-radius: 8px;
-      border: 1.5px solid #f39c12;
+      border: 1.5px solid #fff3e0;
       box-sizing: border-box;
       font-size: 1rem;
       font-family: 'Montserrat', Arial, sans-serif;
-      resize: vertical;
+      background-color: #ff9800cc;
+      color: #fff;
+      text-shadow: none;
       transition: border-color 0.3s ease;
     }
-    input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, select:focus, textarea:focus {
-      border-color: #e67e22;
+    input[type="text"]:focus, input[type="tel"]:focus, select:focus {
+      border-color: #ffe0b2;
       outline: none;
-      box-shadow: 0 0 8px #f39c12aa;
+      box-shadow: 0 0 8px #fff3e0aa;
+      background-color: #ffb74ddd;
     }
     .radio-group {
       margin-top: 5px;
+      color: #fff3e0;
+      text-shadow: 1px 1px 3px #d35400;
     }
     .radio-group label {
       font-weight: normal;
       margin-right: 20px;
-      color: #c0392b;
+      color: #fff3e0;
+      text-shadow: 1px 1px 3px #d35400;
       font-size: 0.95rem;
     }
     button {
       margin-top: 25px;
-      background-color: #f97316;
+      background-color: #ff6f00;
       color: white;
       padding: 14px;
       border: none;
@@ -90,45 +86,33 @@
       font-size: 1.15rem;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 4px 12px #d35400bb;
+      box-shadow: 0 4px 12px #b25400cc;
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #e67e22;
+      background-color: #ffa000;
     }
     footer {
       text-align: center;
-      margin: 30px auto 20px;
+      margin: 20px auto 10px;
       font-size: 12px;
-      color: #999;
+      color: #fff3e0cc;
       font-family: 'Montserrat', Arial, sans-serif;
-    }
-    .footer-img {
-      width: 100%;
-      max-height: 160px;
-      object-fit: cover;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
-      box-shadow: 0 -4px 12px rgba(255, 165, 0, 0.3);
+      text-shadow: 1px 1px 3px #b25400cc;
     }
   </style>
 </head>
 <body>
-
-  <img class="header-img" src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Laranja fresca com gotas de água" />
-
   <div class="container">
     <h1>Pesquisa de Satisfação - Suco Life</h1>
     <form action="https://formspree.io/f/xovdrqjo" method="POST">
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_subject" value="Nova resposta da pesquisa Suco Life" />
-
       <label>1. É consumidor de sucos naturais?</label>
       <div class="radio-group">
         <label><input type="radio" name="consome_naturais" value="sim" required /> Sim</label>
         <label><input type="radio" name="consome_naturais" value="não" /> Não</label>
       </div>
-
       <label>2. Qual marca você costuma comprar?</label>
       <select name="marca_habitual" required>
         <option value="">Selecione...</option>
@@ -137,7 +121,6 @@
         <option value="prats">Prats</option>
         <option value="life">Life</option>
       </select>
-
       <label>3. O que mais leva em consideração na hora de comprar?</label>
       <select name="criterio_compra" required>
         <option value="">Selecione...</option>
@@ -145,34 +128,25 @@
         <option value="sabor">Sabor mais adocicado</option>
         <option value="saudavel">Produto mais saudável</option>
       </select>
-
       <label>4. Suco Life de laranja é um produto natural, sem adição de açúcares e conservantes. O que achou do produto?</label>
       <div class="radio-group">
         <label><input type="radio" name="opiniao_produto" value="gostei muito" required /> Gostei muito</label>
         <label><input type="radio" name="opiniao_produto" value="gostei" /> Gostei</label>
         <label><input type="radio" name="opiniao_produto" value="nao gostei" /> Não gostei</label>
       </div>
-
       <label>5. Qual a possibilidade de, na próxima compra, escolher sucos Life para sua mesa?</label>
       <div class="radio-group">
         <label><input type="radio" name="probabilidade_compra" value="muito provavel" required /> Muito provável</label>
         <label><input type="radio" name="probabilidade_compra" value="provavel" /> Provável</label>
         <label><input type="radio" name="probabilidade_compra" value="pouco provavel" /> Pouco provável</label>
       </div>
-
       <label>Nome:</label>
       <input type="text" name="nome" />
-
       <label>Telefone:</label>
       <input type="tel" name="telefone" />
-
       <button type="submit">Enviar Respostas</button>
     </form>
   </div>
-
-  <img class="footer-img" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80" alt="Laranjas com gotas d'água" />
-
   <footer>© Suco Life 2025</footer>
-
 </body>
 </html>
