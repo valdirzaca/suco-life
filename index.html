@@ -154,7 +154,7 @@
 <body>
 
   <section class="hero">
-    <img src="https://cdn.pixabay.com/photo/2017/03/27/13/51/orange-2177458_960_720.png" alt="Suco natural de laranja" />
+    <img src="https://cdn.pixabay.com/photo/2020/06/23/10/51/orange-5334075_960_720.png" alt="Suco natural de laranja" />
     <h1>Deguste, sinta e compartilhe sua opinião 🍊</h1>
     <p>Você acabou de experimentar o Suco Life? Nos conte o que achou!</p>
   </section>
@@ -167,12 +167,12 @@
 
       <label>1. É consumidor de sucos naturais?</label>
       <div class="radio-group">
-        <label><input type="radio" name="consome_naturais" value="sim" required /> Sim</label>
-        <label><input type="radio" name="consome_naturais" value="não" /> Não</label>
+        <label><input type="radio" name="consome_naturais" value="sim" required onchange="atualizarObrigatoriedade()" /> Sim</label>
+        <label><input type="radio" name="consome_naturais" value="não" onchange="atualizarObrigatoriedade()" /> Não</label>
       </div>
 
       <label>2. Qual marca você costuma comprar?</label>
-      <select name="marca_habitual" required>
+      <select name="marca_habitual" id="marca_habitual" required>
         <option value="">Selecione...</option>
         <option value="suq">Suq</option>
         <option value="macrovita">Macrovita</option>
@@ -181,7 +181,7 @@
       </select>
 
       <label>3. O que mais leva em consideração na hora de comprar?</label>
-      <select name="criterio_compra" required>
+      <select name="criterio_compra" id="criterio_compra" required>
         <option value="">Selecione...</option>
         <option value="preco">Preço</option>
         <option value="sabor">Sabor mais adocicado</option>
@@ -213,5 +213,17 @@
   </div>
 
   <footer>© Suco Life 2025</footer>
+
+  <script>
+    function atualizarObrigatoriedade() {
+      const consomeSim = document.querySelector('input[name="consome_naturais"][value="sim"]').checked;
+      const marca = document.getElementById("marca_habitual");
+      const criterio = document.getElementById("criterio_compra");
+
+      marca.required = consomeSim;
+      criterio.required = consomeSim;
+    }
+  </script>
+
 </body>
 </html>
