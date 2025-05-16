@@ -20,39 +20,41 @@
       text-shadow: 1px 1px 4px #000;
     }
     .container {
-      background-color: rgba(255, 152, 0, 0.85);
-      padding: 30px 25px;
-      border-radius: 15px;
-      max-width: 600px;
+      background-color: rgba(255, 152, 0, 0.95);
+      padding: 40px 30px;
+      border-radius: 20px;
+      max-width: 500px;
       width: 90%;
-      box-shadow: 0 0 25px rgba(255, 87, 34, 0.8);
+      box-shadow: 0 0 40px rgba(255, 87, 34, 0.9);
+      box-sizing: border-box;
+      margin: 20px;
     }
     h1 {
       text-align: center;
       color: #fff;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       font-weight: 700;
-      font-size: 1.9rem;
-      text-shadow: 1px 1px 5px #b03e00;
+      font-size: 2.2rem;
+      text-shadow: 1px 1px 6px #b03e00;
     }
     label {
       display: block;
-      margin-top: 15px;
+      margin-top: 18px;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 1.05rem;
       color: #fff3e0;
       text-shadow: 1px 1px 3px #d35400;
     }
     input[type="text"], input[type="tel"], select {
       width: 100%;
-      padding: 10px 12px;
-      margin-top: 7px;
-      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 8px;
+      border-radius: 10px;
       border: 1.5px solid #fff3e0;
       box-sizing: border-box;
-      font-size: 1rem;
+      font-size: 1.1rem;
       font-family: 'Montserrat', Arial, sans-serif;
-      background-color: #ff9800cc;
+      background-color: #ff9800dd;
       color: #fff;
       text-shadow: none;
       transition: border-color 0.3s ease;
@@ -60,11 +62,11 @@
     input[type="text"]:focus, input[type="tel"]:focus, select:focus {
       border-color: #ffe0b2;
       outline: none;
-      box-shadow: 0 0 8px #fff3e0aa;
+      box-shadow: 0 0 10px #fff3e0bb;
       background-color: #ffb74ddd;
     }
     .radio-group {
-      margin-top: 5px;
+      margin-top: 7px;
       color: #fff3e0;
       text-shadow: 1px 1px 3px #d35400;
     }
@@ -73,20 +75,20 @@
       margin-right: 20px;
       color: #fff3e0;
       text-shadow: 1px 1px 3px #d35400;
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
     button {
-      margin-top: 25px;
+      margin-top: 35px;
       background-color: #ff6f00;
       color: white;
-      padding: 14px;
+      padding: 16px;
       border: none;
-      border-radius: 12px;
+      border-radius: 16px;
       width: 100%;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 4px 12px #b25400cc;
+      box-shadow: 0 6px 18px #b25400cc;
       transition: background-color 0.3s ease;
     }
     button:hover {
@@ -94,27 +96,45 @@
     }
     footer {
       text-align: center;
-      margin: 20px auto 10px;
+      margin: 30px auto 10px;
       font-size: 12px;
       color: #fff3e0cc;
       font-family: 'Montserrat', Arial, sans-serif;
       text-shadow: 1px 1px 3px #b25400cc;
     }
+
+    /* Responsividade */
+    @media(max-width: 480px) {
+      .container {
+        max-width: 95%;
+        padding: 25px 20px;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      label, .radio-group label {
+        font-size: 0.9rem;
+      }
+      button {
+        font-size: 1.1rem;
+        padding: 14px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" role="main">
     <h1>Pesquisa de Satisfação - Suco Life</h1>
-    <form action="https://formspree.io/f/xovdrqjo" method="POST">
+    <form action="https://formspree.io/f/xovdrqjo" method="POST" role="form">
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_subject" value="Nova resposta da pesquisa Suco Life" />
       <label>1. É consumidor de sucos naturais?</label>
-      <div class="radio-group">
+      <div class="radio-group" role="radiogroup" aria-labelledby="pergunta1">
         <label><input type="radio" name="consome_naturais" value="sim" required /> Sim</label>
         <label><input type="radio" name="consome_naturais" value="não" /> Não</label>
       </div>
       <label>2. Qual marca você costuma comprar?</label>
-      <select name="marca_habitual" required>
+      <select name="marca_habitual" required aria-label="Marca habitual">
         <option value="">Selecione...</option>
         <option value="suq">Suq</option>
         <option value="macrovita">Macrovita</option>
@@ -122,20 +142,20 @@
         <option value="life">Life</option>
       </select>
       <label>3. O que mais leva em consideração na hora de comprar?</label>
-      <select name="criterio_compra" required>
+      <select name="criterio_compra" required aria-label="Critério de compra">
         <option value="">Selecione...</option>
         <option value="preco">Preço</option>
         <option value="sabor">Sabor mais adocicado</option>
         <option value="saudavel">Produto mais saudável</option>
       </select>
       <label>4. Suco Life de laranja é um produto natural, sem adição de açúcares e conservantes. O que achou do produto?</label>
-      <div class="radio-group">
+      <div class="radio-group" role="radiogroup" aria-labelledby="pergunta4">
         <label><input type="radio" name="opiniao_produto" value="gostei muito" required /> Gostei muito</label>
         <label><input type="radio" name="opiniao_produto" value="gostei" /> Gostei</label>
         <label><input type="radio" name="opiniao_produto" value="nao gostei" /> Não gostei</label>
       </div>
       <label>5. Qual a possibilidade de, na próxima compra, escolher sucos Life para sua mesa?</label>
-      <div class="radio-group">
+      <div class="radio-group" role="radiogroup" aria-labelledby="pergunta5">
         <label><input type="radio" name="probabilidade_compra" value="muito provavel" required /> Muito provável</label>
         <label><input type="radio" name="probabilidade_compra" value="provavel" /> Provável</label>
         <label><input type="radio" name="probabilidade_compra" value="pouco provavel" /> Pouco provável</label>
