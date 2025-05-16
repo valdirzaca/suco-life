@@ -149,4 +149,29 @@
         <option value="saudavel">Produto mais saudável</option>
       </select>
       
-      <label>4. Suco Life de laranja é um produto natural, sem adição de açúcares e conservantes. O que achou
+      <label>4. Suco Life de laranja é um produto natural, sem adição de açúcares e conservantes. O que achou do produto?</label>
+      <div class="radio-group" role="radiogroup" aria-labelledby="pergunta4">
+        <label><input type="radio" name="opiniao_produto" value="gostei muito" required /> Gostei muito</label>
+        <label><input type="radio" name="opiniao_produto" value="gostei" /> Gostei</label>
+        <label><input type="radio" name="opiniao_produto" value="nao gostei" /> Não gostei</label>
+      </div>
+      
+      <label>5. Qual a possibilidade de, na próxima compra, escolher sucos Life para sua mesa?</label>
+      <div class="radio-group" role="radiogroup" aria-labelledby="pergunta5">
+        <label><input type="radio" name="probabilidade_compra" value="muito provavel" required /> Muito provável</label>
+        <label><input type="radio" name="probabilidade_compra" value="provavel" /> Provável</label>
+        <label><input type="radio" name="probabilidade_compra" value="pouco provavel" /> Pouco provável</label>
+      </div>
+      
+      <label>Nome:</label>
+      <input type="text" name="nome" />
+      
+      <label>Telefone:</label>
+      <input type="tel" name="telefone" />
+      
+      <button type="submit">Enviar Respostas</button>
+    </form>
+  </div>
+  <footer>© Suco Life 2025</footer>
+</body>
+</html>
