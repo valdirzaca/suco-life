@@ -12,12 +12,34 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-      padding-top: 40px;
+      flex-direction: column;
+      align-items: center;
       color: #333;
     }
+
+    .hero {
+      width: 100%;
+      text-align: center;
+      background-color: #fff2cc;
+      padding: 30px 20px;
+    }
+
+    .hero img {
+      max-width: 280px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 1.8rem;
+      color: #ff7f00;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: #555;
+    }
+
     .form-container {
       background-color: #ff9600cc;
       border-radius: 15px;
@@ -25,14 +47,17 @@
       max-width: 480px;
       width: 90%;
       padding: 30px 35px;
+      margin: 20px 0;
     }
-    h1 {
+
+    h2 {
       text-align: center;
       font-weight: 600;
       color: #fff;
       margin-bottom: 30px;
       text-shadow: 1px 1px 4px #b35900;
     }
+
     label {
       display: block;
       font-weight: 600;
@@ -41,6 +66,7 @@
       color: #fff;
       text-shadow: 1px 1px 3px #b35900;
     }
+
     input[type="text"],
     input[type="tel"],
     select {
@@ -52,6 +78,7 @@
       box-sizing: border-box;
       outline: none;
     }
+
     input[type="text"],
     input[type="tel"] {
       background-color: #fff3d1;
@@ -59,11 +86,13 @@
       border: 2px solid #ffb84d;
       transition: border-color 0.3s ease;
     }
+
     input[type="text"]:focus,
     input[type="tel"]:focus {
       border-color: #ff7f00;
       background-color: #fff;
     }
+
     select {
       background-color: #fff3d1;
       border: 2px solid #ffb84d;
@@ -71,13 +100,16 @@
       cursor: pointer;
       transition: border-color 0.3s ease;
     }
+
     select:focus {
       border-color: #ff7f00;
       background-color: #fff;
     }
+
     .radio-group {
       margin-top: 8px;
     }
+
     .radio-group label {
       font-weight: 400;
       color: #fff9e6;
@@ -86,10 +118,12 @@
       text-shadow: 1px 1px 3px #b35900;
       user-select: none;
     }
+
     .radio-group input[type="radio"] {
       margin-right: 6px;
       cursor: pointer;
     }
+
     button {
       margin-top: 30px;
       background-color: #ff7f00;
@@ -104,31 +138,39 @@
       box-shadow: 0 4px 12px #b35900cc;
       transition: background-color 0.3s ease;
     }
+
     button:hover {
       background-color: #ffad33;
     }
+
     footer {
-      margin-top: 20px;
+      margin: 20px 0;
       text-align: center;
       font-size: 12px;
       color: #ff7f00cc;
-      font-family: 'Poppins', sans-serif;
     }
   </style>
 </head>
 <body>
+
+  <section class="hero">
+    <img src="https://cdn.pixabay.com/photo/2017/03/27/13/51/orange-2177458_960_720.png" alt="Suco natural de laranja" />
+    <h1>Deguste, sinta e compartilhe sua opinião 🍊</h1>
+    <p>Você acabou de experimentar o Suco Life? Nos conte o que achou!</p>
+  </section>
+
   <div class="form-container">
-    <h1>Pesquisa de Satisfação - Suco Life</h1>
+    <h2>Pesquisa de Satisfação - Suco Life</h2>
     <form action="https://formspree.io/f/xovdrqjo" method="POST">
       <input type="hidden" name="_captcha" value="false" />
       <input type="hidden" name="_subject" value="Nova resposta da pesquisa Suco Life" />
-      
+
       <label>1. É consumidor de sucos naturais?</label>
       <div class="radio-group">
         <label><input type="radio" name="consome_naturais" value="sim" required /> Sim</label>
         <label><input type="radio" name="consome_naturais" value="não" /> Não</label>
       </div>
-      
+
       <label>2. Qual marca você costuma comprar?</label>
       <select name="marca_habitual" required>
         <option value="">Selecione...</option>
@@ -137,7 +179,7 @@
         <option value="prats">Prats</option>
         <option value="life">Life</option>
       </select>
-      
+
       <label>3. O que mais leva em consideração na hora de comprar?</label>
       <select name="criterio_compra" required>
         <option value="">Selecione...</option>
@@ -145,30 +187,31 @@
         <option value="sabor">Sabor mais adocicado</option>
         <option value="saudavel">Produto mais saudável</option>
       </select>
-      
+
       <label>4. Suco Life de laranja é um produto natural, sem adição de açúcares e conservantes. O que achou do produto?</label>
       <div class="radio-group">
         <label><input type="radio" name="opiniao_produto" value="gostei muito" required /> Gostei muito</label>
         <label><input type="radio" name="opiniao_produto" value="gostei" /> Gostei</label>
         <label><input type="radio" name="opiniao_produto" value="nao gostei" /> Não gostei</label>
       </div>
-      
+
       <label>5. Qual a possibilidade de, na próxima compra, escolher sucos Life para sua mesa?</label>
       <div class="radio-group">
         <label><input type="radio" name="probabilidade_compra" value="muito provavel" required /> Muito provável</label>
         <label><input type="radio" name="probabilidade_compra" value="provavel" /> Provável</label>
         <label><input type="radio" name="probabilidade_compra" value="pouco provavel" /> Pouco provável</label>
       </div>
-      
+
       <label>Nome:</label>
       <input type="text" name="nome" />
-      
+
       <label>Telefone:</label>
       <input type="tel" name="telefone" />
-      
+
       <button type="submit">Enviar Respostas</button>
     </form>
   </div>
+
   <footer>© Suco Life 2025</footer>
 </body>
 </html>
